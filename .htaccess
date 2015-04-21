@@ -1,0 +1,13 @@
+AddDefaultCharset utf-8
+
+php_value session.hash_function 1;
+php_value session.hash_bits_per_character 6;
+
+RewriteEngine on
+# Redirect to CP Panel
+RewriteRule ^cp/?$ /cp.html [NC,R,L]
+# If a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# Otherwise forward it to index.php
+RewriteRule . index.php

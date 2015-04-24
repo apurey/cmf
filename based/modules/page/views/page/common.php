@@ -28,6 +28,7 @@ echo MagicWidget::widget(
     [
         'options' => [
             'module' => $dp->formName(),
+            'group_id' => 0,
             'record_id' => $dp->id,
         ],
     ]

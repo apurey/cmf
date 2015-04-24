@@ -3,7 +3,7 @@
 return [
     'class' => 'yii\db\Connection',
     //'dsn' => 'pgsql:host=localhost;port=5432;dbname=database', // PostgreSQL
-    'dsn' => 'mysql:host=d7.home;dbname=dbname', // MySQL, MariaDB
+    'dsn' => 'mysql:host=localhost;dbname=dbname', // MySQL, MariaDB
     'username' => 'username',
     'password' => 'password',
     'charset' => 'utf8',

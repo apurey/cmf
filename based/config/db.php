@@ -8,6 +8,8 @@ return [
     'password' => 'password',
     'charset' => 'utf8',
     'tablePrefix' => 'cmf_',
+    'enableQueryCache' => true,
+    'queryCacheDuration' => 300, // seconds
     'enableSchemaCache' => YII_DEBUG ? false : true,
     'schemaCacheDuration' => 300, // seconds
 ];

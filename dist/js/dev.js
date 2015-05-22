@@ -4,6 +4,12 @@
  * Date: 21.04.14
  * Time: 15:43
  */
-jQuery(window).error(function (msg, url, line) {
-    jQuery.post('/page/error.html', { msg: msg, url: url, line: line });
+jQuery(function () {
+    jQuery('img').error(function () {
+        jQuery(this).attr({
+            'data-src': jQuery(this).attr('src'),
+            'src': '/dist/img/broken-image.png',
+            'title': 'Broken image'
+        });
+    });
 });

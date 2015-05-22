@@ -55,6 +55,15 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'cache' => [
+            'class' => 'yii\redis\Cache',
+            'keyPrefix' => hash('crc32', __FILE__),
+            'redis' => [
+                'hostname' => 'localhost',
+                'port' => 6379,
+                'database' => 0,
+            ],
+        ],
         */
         'cache' => [
             'class' => 'yii\caching\MemCache',

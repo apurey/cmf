@@ -83,12 +83,6 @@ class ManageController extends Controller
     public function actionDelete()
     {
         $model = $this->findModel(Yii::$app->request->get('id', null));
-        if (is_file($model->getSrcPath())) {
-            unlink($model->getSrcPath());
-        }
-        if (is_file($model->getPreviewPath())) {
-            unlink($model->getPreviewPath());
-        }
         $model->delete();
 
         return $this->display($model);

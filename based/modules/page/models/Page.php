@@ -3,6 +3,7 @@
 namespace app\modules\page\models;
 
 use Yii;
+use app\modules\magic\models\Magic;
 use app\modules\language\models\Language;
 
 /**

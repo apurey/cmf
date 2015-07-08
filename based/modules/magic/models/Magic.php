@@ -145,4 +145,17 @@ class Magic extends \yii\db\ActiveRecord
         $module = Yii::$app->getModule('magic');
         return $module->uploadDir;
     }
+
+	public function delete()
+	{
+		if (is_file($this->getSrcPath())) {
+			unlink($this->getSrcPath());
+		}
+		if (is_file($this->getPreviewPath())) {
+			unlink($this->getPreviewPath());
+		}
+
+		parent::delete();
+	}
+    
 }

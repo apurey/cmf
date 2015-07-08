@@ -116,4 +116,17 @@ class Page extends \yii\db\ActiveRecord
             Page::ACTIVE_NO => Yii::t('page', 'No'),
         ];
     }
+
+	public function delete()
+	{
+		$images = Magic::find()->where(['module'=>$this->formName(), 'group_id'=>0, 'record_id'=>$this->id])->all();
+		if ($images) {
+			foreach ($images as $image) {
+				$image->delete();
+			}
+		}
+
+		parent::delete();
+	}
+    
 }
